@@ -1,0 +1,45 @@
+.redBar {
+  height: 20px;
+  background-image: linear-gradient($color-primary, $color-primary-dark);
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn {
+  font-size: 1.6rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 1.5rem 2.5rem;
+  display: inline-block;
+
+  &--primary {
+
+    &:link,
+    &:visited {
+      // color: coral;
+      background-image: linear-gradient($color-primary, $color-primary-dark);
+
+    }
+  }
+
+  &__secondary {
+
+    &:link,
+    &:visited {
+      border: 3px solid #fff;
+      // border-radius: 10px;
+      // padding: 1.5rem 2.5rem;
+      // text-transform: uppercase;
+      // color: #fff;
+      // font-size: 1.5rem;
+      // text-decoration: none;
+    }
+
+  }
+}

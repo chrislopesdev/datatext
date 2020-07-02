@@ -1,0 +1,33 @@
+// COLOR VARIABLES
+$color-primary: #cb3230;
+$color-primary-light: #d54e4e;
+$color-primary-dark: #9a2424;
+
+$color-secondary: #3f9aa5;
+
+$color-grey-light: #d8d8d8;
+$color-grey-dark: #2e2e2e;
+
+// RESPONSIVE BREAKPOINTS
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+}
+
+body {
+  font-family: "cresta", sans-serif;
+  color: $color-grey-dark;
+  line-height: 1.2;
+}

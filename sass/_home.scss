@@ -1,0 +1,103 @@
+.hero {
+  height: 80vh;
+  background-size: cover;
+  background-image: linear-gradient(to right bottom, rgba(#000, .5), rgba(#000, .8)), url(../images/callout.jpg);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &__heading {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__paragraph {
+    font-size: 2rem;
+  }
+}
+
+.receipt {
+  background-color: $color-secondary;
+  color: #fff;
+  height: 10rem;
+
+
+  &__content {
+    display: flex;
+    height: 10rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  &__heading {
+    font-size: 3rem;
+
+  }
+}
+
+.services {
+  background-image: linear-gradient(to right bottom, $color-primary, $color-primary-dark);
+  color: #fff;
+
+  &__content {
+    display: flex;
+    text-align: center;
+    padding: 5rem 0;
+
+    &-box {
+      width: 25%;
+    }
+
+  }
+
+  &__heading {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.careers {
+  background-image: linear-gradient(to right bottom, rgba(#000, .5), rgba(#000, .7)), url(../images/career.jpg);
+  background-size: cover;
+  height: 50vh;
+  color: #fff;
+
+  &__content {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {}
+
+  &__heading {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  &__paragraph {
+    font-size: 2rem;
+  }
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 4rem;
+  margin-right: 1rem;
+  transition: all .2s;
+
+  &:hover,
+  &:active {
+    color: $color-primary;
+    transform: translateY(-3px);
+  }
+}
