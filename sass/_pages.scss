@@ -1,0 +1,17 @@
+.services__page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.services__box {}
+
+.services__image {
+  width: 90%;
+
+}
+
+.services__image-box {
+  height: 20rem;
+  overflow: hidden;
+}

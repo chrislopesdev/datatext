@@ -43,3 +43,26 @@
 
   }
 }
+
+.content {
+  padding: 4rem 0;
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1rem 2rem;
+
+  &>* {
+    grid-column: 2 / -4;
+  }
+}
+
+.quote-right {
+  grid-column: 10 / -1;
+  border-left: 3px solid $color-primary;
+  color: $color-primary;
+  align-self: start;
+  font-size: 3rem;
+  padding-left: 1rem;
+}
