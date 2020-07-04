@@ -15,3 +15,94 @@
   height: 20rem;
   overflow: hidden;
 }
+
+.careers {
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(../images/career.jpg);
+  background-size: cover;
+  grid-column: full-start / full-end;
+  color: #fff;
+  padding: 8rem 0;
+  display: grid;
+  grid-template-columns: [full-start] 1fr [col-start] repeat(6, 1fr) [col-end] 1fr [full-end];
+  grid-template-rows: 10% repeat(3, min-content);
+  grid-row-gap: 1rem;
+  justify-items: start;
+  align-items: center;
+}
+
+.careers__heading {
+  grid-area: 2 / 2 / 3 / 5;
+}
+
+.careers__text {
+  grid-area: 3 / 2 / 4 / 5;
+}
+
+.careers__btn {
+  grid-area: 4 / 1 / 6 / 2;
+  display: block;
+  width: 16rem;
+}
+
+.form-box {
+  background-image: url(/images/form-box.jpg);
+  background-size: cover;
+  border-radius: 3rem;
+  overflow: hidden;
+
+  &__contact {
+    background-image: url(/images/contact_datatext.jpg);
+  }
+}
+
+.form {
+  background: rgba($color-grey-light, .9);
+  padding: 4rem;
+  width: 50%;
+
+  @media only screen and (max-width: $bp-medium) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    width: 100%;
+  }
+
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    display: block;
+
+    &--file {
+      padding: 1rem 0;
+      display: flex;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid $color-secondary;
+      box-shadow: 0 1rem 2rem rgba(#000, .1);
+    }
+  }
+
+  &__label {
+    margin: .7rem 2rem;
+    display: block;
+    transition: all .3s;
+  }
+
+  &__input:placeholder-shown+&__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+}

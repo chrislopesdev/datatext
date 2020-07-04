@@ -41,28 +41,71 @@
   </header>
 
   <div class="wrapper">
-    <section class="content grid-12">
-      <h1>About DataText Event Services</h1>
+    <div class=" content">
+      <h1>Contact DataText Event Services</h1>
+      <!--
+        <?php
+          if(isset($_POST["contact_submit"])):
+      
+            $to = "tom@datatext-event.com";
+            $from =  $_POST["email"];
+            $message = "&nbsp;&nbsp;&nbsp;&nbsp;<strong>Name: </strong>".$_POST["fname"]."<br />";
+            $message .= "&nbsp;&nbsp;&nbsp;&nbsp;<strong>Business Name: </strong>".$_POST["bname"]."<br />";
+            $message .= "&nbsp;&nbsp;&nbsp;&nbsp;<strong>Phone No: </strong>".$_POST["phone"]."<br />";
+            $message .= "&nbsp;&nbsp;&nbsp;&nbsp;<strong>Email Address: </strong>".$_POST["email"]."<br />";
+            $message .= "&nbsp;&nbsp;&nbsp;&nbsp; <strong>Message: </strong>".$_POST["form-message"]."<br />";
+            $subject = 'Contact Us From DataText Event';		
+            $headers = "From: ".$_POST["email"]."\n";
+            $headers .= "MIME-Version: 1.0" . "\r\n";
+            $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
+            $send =	mail($to,$subject,$message,$headers);
+          if($send)
+          {
+            echo "<h2 style='margin-bottom:15px;'>Thanks! your message successfully submitted</h2>";
+          }
+          else
+          {
+            echo "<h2 style='margin-bottom:15px;'>Oops! something went wrong. Please try again later.</h2>";
+          }
+      
+          endif;
+        ?>
+  
+        -->
+      <div class="form-box form-box__contact">
+        <div class="form form-careers">
+          <form action="" method="post" enctype="multipart/form-data">
+            <div class="form__group">
+              <input type="text" id="name" name="fname" class="form__input" placeholder="Full name" required>
+              <label for="name" class="form__label">Full Name</label>
+            </div>
+            <div class="form__group">
+              <input type="text" id="business" name="bname" class="form__input" placeholder="Business name">
+              <label for="business" class="form__label">Business Name</label>
+            </div>
+            <div class="form__group">
+              <input type="text" id="phone" name="phone" class="form__input" placeholder="Phone number" required>
+              <label for="phone" class="form__label">Phone Number</label>
+            </div>
+            <div class="form__group">
+              <input type="email" id="email" name="email" class="form__input" placeholder="Email address" required>
+              <label for="email" class="form__label">Email</label>
+            </div>
+            <div class="form__group">
+              <textarea name="form-message" name="message" id="form-message" class="form__input" cols="30"
+                rows="10"></textarea>
+              <label for="form-message" class="form__label">Message</label>
+            </div>
 
-      <p>
-        DataText was formed to compete in the personnel segment of the trade/consumer show and conference industry.
-        Since our incorporation in 2002 DataText has offered <strong>quality staffing</strong> at <strong>competitive
-          rates</strong>.</p>
-      <p> By delivering
-        intelligent, enthusiastic personnel, in addition to our own hands-on motivated customer service experience we
-        add value to our clients’ events. The owners Tom & Donna Newberry and our management team know customer service;
-        we possess a wealth of experience that will have a positive impact on the events your organization services. Our
-        ideals of effective service have been reinforced by the feedback received from both our local and international
-        clients, who acknowledge that we have delivered on their demands.
-      </p>
-      <blockquote class="quote-right">We add value to our clients’ events.</blockquote>
-      <p>
-        We consider our service to be the industry standard and as an industry leader we believe our dedication to high
-        performance will benefit your organization's events.
-      </p>
+            <button class="btn btn--primary" type="submit" name="contact_submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
-    </section>
+
   </div>
+
 
   <footer class="footer">
     <div class="wrapper">

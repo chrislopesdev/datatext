@@ -8,6 +8,10 @@
   align-items: center;
   text-align: center;
 
+  &__text {
+    animation: moveInBottom 1s ease-out .5s none;
+  }
+
   &__heading {
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -65,7 +69,7 @@
   }
 }
 
-.careers {
+.home-careers {
   background-image: linear-gradient(to right bottom, rgba(#000, .5), rgba(#000, .7)), url(../images/career.jpg);
   background-size: cover;
   height: 50vh;
@@ -75,6 +79,7 @@
     height: 50vh;
     display: flex;
     align-items: center;
+    animation: moveInBottom 1s ease-out .5s none;
   }
 
   &__text {}

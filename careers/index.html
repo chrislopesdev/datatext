@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataText Event Services</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/3ffc2a27d6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="redBar"></div>
+    <div class="wrapper">
+      <div class="header__container">
+        <div class="logo">
+          <a href="../index.html" class="logo__link">
+            <img src="/images/datatext-logo.gif" alt="DataText Event Services" />
+          </a>
+        </div>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="/about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="/services" class="nav__link">Services</a>
+            </li>
+            <li class="nav__item">
+              <a href="/careers" class="nav__link">Careers</a>
+            </li>
+            <li class="nav__item">
+              <a href="/contact" class="nav__link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="container__careers">
+
+      <h1 class="heading__content">Careers with DataText</h1>
+
+      <p>We offer exciting career options in the event industry.</p>
+      <!--
+      <?php
+            
+          if(isset($_POST["submit"])):
+      
+      
+            $uploadStatus = 1;
+                  
+                  // Upload attachment file
+                  if(!empty($_FILES["resume"]["name"])){
+                      
+                      // File path config
+                      $targetDir = "./uploads/";
+                      $fileName = basename($_FILES["resume"]["name"]);
+                      $targetFilePath = $targetDir . $fileName;
+                      $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+                      
+                      // Allow certain file formats
+                      $allowTypes = array('pdf');
+                      if(in_array($fileType, $allowTypes)){
+                          // Upload file to the server
+                          if(move_uploaded_file($_FILES["resume"]["tmp_name"], $targetFilePath)){
+                              $uploadedFile = $targetFilePath;
+                          }else{
+                              $uploadStatus = 0;
+                              $statusMsg = "Sorry, there was an error uploading your file.";
+                          }
+                      }else{
+                          $uploadStatus = 0;
+                          $statusMsg = 'Sorry, only PDF, DOC, JPG, JPEG, & PNG files are allowed to upload.';
+                      }
+                  }
+                  
+                  if($uploadStatus == 1){
+                      
+                      $to = "tom@datatext-event.com";
+              $from =  $_POST["email"];
+              
+      
+              $htmlContent = "&nbsp;&nbsp;&nbsp;&nbsp;<strong>Name: </strong>".$_POST["fname"]."<br />";
+              $htmlContent .= "&nbsp;&nbsp;&nbsp;&nbsp;<strong>Phone No: </strong>".$_POST["phone"]."<br />";
+              $htmlContent .= "&nbsp;&nbsp;&nbsp;&nbsp;<strong>Email Address: </strong>".$_POST["email"]."<br />";
+              $subject = 'Resume submission From DataText Event';		
+              
+      
+                      // Header for sender info
+                      $headers = "From: {$_POST["fname"]}"." <".$from.">";
+      
+                      if(!empty($uploadedFile) && file_exists($uploadedFile)){
+                          
+                          // Boundary 
+                          $semi_rand = md5(time()); 
+                          $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
+                          
+                          // Headers for attachment 
+                          $headers .= "\nMIME-Version: 1.0\n" . "Content-Type: multipart/mixed;\n" . " boundary=\"{$mime_boundary}\""; 
+                          
+                          // Multipart boundary 
+                          $message = "--{$mime_boundary}\n" . "Content-Type: text/html; charset=\"UTF-8\"\n" .
+                          "Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n"; 
+                          
+                          // Preparing attachment
+                          if(is_file($uploadedFile)){
+                              $message .= "--{$mime_boundary}\n";
+                              $fp =    @fopen($uploadedFile,"rb");
+                              $data =  @fread($fp,filesize($uploadedFile));
+                              @fclose($fp);
+                              $data = chunk_split(base64_encode($data));
+                              $message .= "Content-Type: application/octet-stream; name=\"".basename($uploadedFile)."\"\n" . 
+                              "Content-Description: ".basename($uploadedFile)."\n" .
+                              "Content-Disposition: attachment;\n" . " filename=\"".basename($uploadedFile)."\"; size=".filesize($uploadedFile).";\n" . 
+                              "Content-Transfer-Encoding: base64\n\n" . $data . "\n\n";
+                          }
+                          
+                          $message .= "--{$mime_boundary}--";
+                          $returnpath = "-f" . $from;
+                          
+                          // Send email
+                          $mail = mail($to, $subject, $message, $headers, $returnpath);
+                          
+                          // Delete attachment file from the server
+                          @unlink($uploadedFile);
+                      }
+      
+            if($mail)
+            {
+              echo "<h2 style='margin-bottom:15px;'>Thanks! your message successfully submitted</h2>";
+            }
+            else
+            {
+              echo "<h2 style='margin-bottom:15px;'>Ops! something went wrong. Please try again latter.</h2>";
+            }
+          }
+      
+          endif;
+        ?>
+        -->
+      <div class="form-box">
+        <div class="form form-careers">
+          <form action="" method="post" enctype="multipart/form-data">
+            <div class="form__group">
+              <input type="text" id="name" name="fname" class="form__input" placeholder="Full name" required>
+              <label for="name" class="form__label">Full Name</label>
+            </div>
+            <div class="form__group">
+              <input type="text" id="phone" name="phone" class="form__input" placeholder="Phone number" required>
+              <label for="phone" class="form__label">Phone Number</label>
+            </div>
+            <div class="form__group">
+              <input type="email" id="email" name="email" class="form__input" placeholder="Email address" required>
+              <label for="email" class="form__label">Email</label>
+            </div>
+            <div class="form__group">
+              <p>Please submit resume as a PDF file.</p>
+              <input type="file" id="resume" name="resume" class="form__input form__input--file" accept=".pdf" required>
+              <label for="resume" class="form__label"></label>
+            </div>
+
+            <button class="btn btn--primary" name="submit" type="submit" value="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <p class="legal">DataText is an equal opportunity employer. All applicants will be considered for employment
+        without attention to race, color, religion, sex, sexual orientation, gender identity, national origin, veteran
+        or disability status.</p>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="wrapper">
+      <div class="footer__container">
+        <div class="footer__box footer__box--1">
+          <h4 class="heading-4 footer__heading">About Us</h4>
+          <p class="footer__text">
+            DataText is a member of
+            <strong><a href="https://caem.ca/" class="footer__link" target="_blank">Canadian Association of Exposition
+                Management</a></strong>
+            and a Member of
+            <strong><a href="https://www.seetorontonow.com" class="footer__link" target="_blank">Tourism
+                Toronto</a></strong>
+          </p>
+        </div>
+        <div class="footer__box footer__box--2">
+          <h4 class="heading-4 footer__heading">Contact Us</h4>
+          <p class="footer__text">
+            <strong>Phone:</strong>
+            <a href="tel:1-905-703-1967" class="footer__link">905-703-1967</a>
+          </p>
+          <p class="footer__text">
+            <strong>Email:</strong>
+            <a href="mailto:info@datatext-event.com" class="footer__link">info@datatext-event.com</a>
+          </p>
+        </div>
+        <div class="footer__box footer__box--3">
+          <h4 class="heading-4 footer__heading">Follow Us</h4>
+
+          <a href="https://www.facebook.com/datatextevent/" target="_blank">
+            <i class="fab fa-facebook-square social-icon"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/company/datatext-event-services-inc./about/" target="_blank">
+            <i class="fab fa-linkedin social-icon"></i>
+          </a>
+
+          <a href="https://www.instagram.com/datatextevents" target="_blank">
+            <i class="fab fa-instagram social-icon"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p id="copyright" class="footer__text">
+          &copy; 2019 Copyright DataText Event Services
+        </p>
+        <p id="evafresh" class="footer__text">
+          Website by
+          <a href="http://www.evafreshdesign.com" class="footer__link" target="_blank">Evafresh Design</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <div class="redBar"></div>
+</body>
+
+</html>
